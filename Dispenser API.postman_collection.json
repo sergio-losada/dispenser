@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "b466808f-7e09-45d7-88f1-af4b2a6063ca",
+		"name": "Dispenser API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16960738"
+	},
+	"item": [
+		{
+			"name": "Create new dispenser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY5NzgyMzQwOX0.MikUxONOLqDp3IkUR6oGcagaNpabQVJjrAELP6F_5U0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"flow_volume\": 0.064\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6060"
+			},
+			"response": []
+		},
+		{
+			"name": "Change dispenser status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"close\",\r\n  \"updated_at\": \"2022-01-01T02:51:20Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6060?id=0bb2aef5-bccc-4dd9-924a-877968a71b3f",
+					"host": [
+						"localhost"
+					],
+					"port": "6060",
+					"query": [
+						{
+							"key": "id",
+							"value": "0bb2aef5-bccc-4dd9-924a-877968a71b3f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get money spent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6060?id=0bb2aef5-bccc-4dd9-924a-877968a71b3f",
+					"host": [
+						"localhost"
+					],
+					"port": "6060",
+					"query": [
+						{
+							"key": "id",
+							"value": "0bb2aef5-bccc-4dd9-924a-877968a71b3f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "dispenser-api",
+  "version": "1.0.0",
+  "description": "API that manages the amount of beer that flows through the tap and calculates the benefits",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "rm -rf build/ && prettier --write source/ && tsc",
+    "test": "jest"
+  },
+  "author": "sergio-losada",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.20",
+    "@types/morgan": "^1.9.7",
+    "axios": "^1.5.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/swagger-ui-express": "^4.1.5",
+    "@types/uuid": "^9.0.6",
+    "jest": "^29.7.0"
+  }
+}

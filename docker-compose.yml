@@ -1,0 +1,19 @@
+# Docker Compose version
+version: '3'
+
+# Service definition
+services:
+  # [BACKEND] Spring Boot Application 
+  apiculture:
+    image: 'beer-tap-dispenser:latest'
+    build:
+      # Dockerfile path
+      context: .
+    container_name: dispenser
+    # Environment variables in application.properties
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://slosada:dispenserapi@cluster0.5cnmens.mongodb.net/test?retryWrites=true&w=majority
+      - SPRING_DATA_MONGODB_DATABASE=prod
+    ports:
+      # Expose port 8080 of the container and forward it to port 8080 of the host machine
+      - 8080:8080
