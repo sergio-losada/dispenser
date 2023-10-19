@@ -4,7 +4,7 @@ version: '3'
 # Service definition
 services:
   # [BACKEND] Spring Boot Application 
-  apiculture:
+  dispenser:
     image: 'beer-tap-dispenser:latest'
     build:
       # Dockerfile path
