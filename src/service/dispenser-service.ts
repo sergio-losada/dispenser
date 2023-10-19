@@ -83,7 +83,7 @@ class DispenserService {
   async getMoneySpent(id: string) {
     const dispenser = await this.repository.getDispenserById(id);
     return {
-      amount: dispenser?.usages.reduce((sum: number, usage: Usage) => sum + usage.total_spent, 0).toFixed(3),
+      amount: dispenser?.usages.reduce((sum: number, usage: Usage) => sum + usage.total_spent, 0).toFixed(3) as number,
       usages: dispenser?.usages
     };
   }
