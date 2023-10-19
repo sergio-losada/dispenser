@@ -15,5 +15,5 @@ services:
       - SPRING_DATA_MONGODB_URI=mongodb+srv://slosada:dispenserapi@cluster0.5cnmens.mongodb.net/test?retryWrites=true&w=majority
       - SPRING_DATA_MONGODB_DATABASE=prod
     ports:
-      # Expose port 8080 of the container and forward it to port 8080 of the host machine
-      - 8080:8080
+      # Expose port 6060 of the container and forward it to port 6060 of the host machine
+      - 6060:6060
