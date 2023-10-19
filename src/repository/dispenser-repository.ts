@@ -24,10 +24,6 @@ class DispenserRepository {
         console.log('MongoDB Atlas connection closed');
     }
 
-    async find() {
-        return await this.collection.find().project({ _id: 0 }).toArray();
-    }
-
     async createDispenser(dispenser: Dispenser) {
         const result = await this.collection.insertOne(dispenser);
 

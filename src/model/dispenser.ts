@@ -15,6 +15,9 @@ class Dispenser {
      */
     status?: "open" | "close";
 
+    /**
+     * Array of usages, updated every time the dispenser opens or closes
+     */
     usages?: Usage[]
 
     constructor(flow_volume: number, id: string) {

@@ -43,8 +43,11 @@ class DispenserController {
     try {
       const id: string | undefined = req.query.id as string;
 
+      // DISCLAIMER: IMPLEMENTATION DECISION EXPLAINED HERE
+      // API supports updated_at in the request body. But if no date is provided, API will take the current date
+      // In terms of performance, this is better. It ables you to calculate the amount spent IN REAL TIME
+      const updatedAt: string = req.body.updated_at || new Date().toISOString();
       const status: string = req.body.status;
-      const updated_at: string = req.body.updated_at;
 
       if (status !== "open" && status !== "close") {
         return res.status(400).json({ error: 'Invalid status. It must be open or close' });
@@ -60,7 +63,7 @@ class DispenserController {
         return res.status(409).json({ error: 'Dispenser is already opened/closed' });
       }
 
-      await this.service.updateStatus(status, updated_at, id);
+      await this.service.updateStatus(status, updatedAt, id);
 
       return res.status(202).json({ message: "Status of the tap changed correctly" });
 
@@ -81,12 +84,12 @@ class DispenserController {
       const id: string | undefined = req.query.id as string;
 
       const dispenser = await this.service.getDispenserById(id);
-      console.log(id);
       if (dispenser === null) {
         return res.status(404).json({ error: 'Requested dispenser does not exist' });
       }
+      const response = await this.service.getMoneySpent(id);
 
-      return res.status(200).json(await this.service.getMoneySpent(id));
+      return res.status(200).json(response);
     }
     catch (error) {
       return res.status(500).json({ error: "Unexpected API error" });
