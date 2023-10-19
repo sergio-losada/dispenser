@@ -37,7 +37,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"status\": \"close\",\r\n  \"updated_at\": \"2022-01-01T02:51:20Z\"\r\n}",
+					"raw": "{\r\n  \"status\": \"close\"\r\n//   \"updated_at\": \"2022-01-01T02:51:20Z\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -75,6 +75,90 @@
 						{
 							"key": "id",
 							"value": "0bb2aef5-bccc-4dd9-924a-877968a71b3f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new dispenser (Deployed)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY5NzgyMzQwOX0.MikUxONOLqDp3IkUR6oGcagaNpabQVJjrAELP6F_5U0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"flow_volume\": 0.064\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dispenser-sergio-losada.cloud.okteto.net/"
+			},
+			"response": []
+		},
+		{
+			"name": "Change dispenser status (Deployed)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"close\"\r\n//   \"updated_at\": \"2023-10-19T09:34:30Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dispenser-sergio-losada.cloud.okteto.net?id=6ab0d577-9efa-4c96-bead-0fc2a2f33e7b",
+					"protocol": "https",
+					"host": [
+						"dispenser-sergio-losada",
+						"cloud",
+						"okteto",
+						"net"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6ab0d577-9efa-4c96-bead-0fc2a2f33e7b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get money spent (Deployed)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dispenser-sergio-losada.cloud.okteto.net/?id=6ab0d577-9efa-4c96-bead-0fc2a2f33e7b",
+					"protocol": "https",
+					"host": [
+						"dispenser-sergio-losada",
+						"cloud",
+						"okteto",
+						"net"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6ab0d577-9efa-4c96-bead-0fc2a2f33e7b"
 						}
 					]
 				}
